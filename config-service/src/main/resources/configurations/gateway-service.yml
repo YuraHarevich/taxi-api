@@ -6,8 +6,3 @@ spring:
       discovery:
         locator:
           enabled: true
-      routes:
-        - id: driver-service
-          uri: lb:http://DRIVER-SERVICE
-          predicates:
-            - Path=/api/v1/test/**
