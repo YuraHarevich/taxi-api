@@ -12,9 +12,6 @@ public record PassengerRequest(
         String surname,
         @Email(message = "email should be valid")
         @NotBlank(message = "email is mandatory")
-        String email,
-        @Min(value = 0, message = "quantity must be greater than 0")
-        @Max(value = 5, message = "quantity must be less than 5")
-        double rate
+        String email
 ) {
 }

@@ -16,6 +16,7 @@ public class PassengerService {
 
     public Passenger registrate(PassengerRequest request) {
         var passenger = PassengerMapper.toPassenger(request);
+        passenger.setRate(5.0);
         passengerRepository.saveAndFlush(passenger);
         return passenger;
     }
@@ -28,7 +29,6 @@ public class PassengerService {
         changed_passenger.setName(request.name());
         changed_passenger.setEmail(request.email());
         changed_passenger.setSurname(request.surname());
-        changed_passenger.setRate(request.rate());
         return passengerRepository.saveAndFlush(changed_passenger);
     }
 

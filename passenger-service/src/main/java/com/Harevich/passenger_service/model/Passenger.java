@@ -17,5 +17,5 @@ public class Passenger {
     private String name;
     private String surname;
     private String email;
-    private double rate;
+    private Double rate;
 }

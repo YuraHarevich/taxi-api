@@ -9,7 +9,6 @@ public class PassengerMapper {
                 .name(request.name())
                 .surname(request.surname())
                 .email(request.email())
-                .rate(request.rate())
                 .build();
     }
 }

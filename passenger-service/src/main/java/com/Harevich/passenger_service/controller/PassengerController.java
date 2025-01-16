@@ -4,6 +4,7 @@ import com.Harevich.passenger_service.dto.PassengerRequest;
 import com.Harevich.passenger_service.dto.PassengerResponse;
 import com.Harevich.passenger_service.model.Passenger;
 import com.Harevich.passenger_service.service.PassengerService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,12 +16,12 @@ public class PassengerController {
     private final PassengerService passengerService;
     @PostMapping("registration")
     @ResponseStatus(HttpStatus.CREATED)
-    public void registration(PassengerRequest request){
+    public void registration(@Valid @RequestBody PassengerRequest request){
         passengerService.registrate(request);
     }
     @PatchMapping("edit")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Passenger edit(@RequestParam("id") Long id, PassengerRequest request){
+    public Passenger edit(@RequestParam("id") Long id,@Valid @RequestBody PassengerRequest request){
         return passengerService.edit(request,id);
     }
     @GetMapping

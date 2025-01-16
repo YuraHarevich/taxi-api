@@ -5,6 +5,6 @@ public record PassengerResponse(
         String name,
         String surname,
         String email,
-        double rate
+        Double rate
 ) {
 }
