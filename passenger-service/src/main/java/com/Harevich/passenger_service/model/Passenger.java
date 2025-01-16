@@ -1,0 +1,23 @@
+package com.Harevich.passenger_service.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Passenger {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "passenger_seq")
+    @SequenceGenerator(name = "passenger_seq", sequenceName = "passenger_seq", allocationSize = 1)
+    private Long id;
+    private String name;
+    private String surname;
+    private String email;
+    private double rate;
+}
