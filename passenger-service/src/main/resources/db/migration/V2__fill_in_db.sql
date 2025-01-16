@@ -1,0 +1,16 @@
+INSERT INTO Passenger (id, name, surname, email, rate) VALUES
+    (nextval('passenger_seq'), 'John', 'Doe', 'john.doe@example.com', 4.5),
+    (nextval('passenger_seq'), 'Jane', 'Smith', 'jane.smith@example.com', 4.7),
+    (nextval('passenger_seq'), 'Alice', 'Brown', 'alice.brown@example.com', 4.3),
+    (nextval('passenger_seq'), 'Bob', 'Taylor', 'bob.taylor@example.com', 4.8),
+    (nextval('passenger_seq'), 'Charlie', 'Davis', 'charlie.davis@example.com', 4.0),
+    (nextval('passenger_seq'), 'Emma', 'Wilson', 'emma.wilson@example.com', 4.6),
+    (nextval('passenger_seq'), 'Liam', 'Moore', 'liam.moore@example.com', 4.2),
+    (nextval('passenger_seq'), 'Sophia', 'Miller', 'sophia.miller@example.com', 4.4),
+    (nextval('passenger_seq'), 'James', 'Anderson', 'james.anderson@example.com', 4.1),
+    (nextval('passenger_seq'), 'Olivia', 'Thomas', 'olivia.thomas@example.com', 4.9),
+    (nextval('passenger_seq'), 'Ethan', 'Jackson', 'ethan.jackson@example.com', 4.3),
+    (nextval('passenger_seq'), 'Isabella', 'White', 'isabella.white@example.com', 4.5),
+    (nextval('passenger_seq'), 'Mason', 'Harris', 'mason.harris@example.com', 4.7),
+    (nextval('passenger_seq'), 'Ava', 'Martin', 'ava.martin@example.com', 4.8),
+    (nextval('passenger_seq'), 'William', 'Thompson', 'william.thompson@example.com', 4.6)
