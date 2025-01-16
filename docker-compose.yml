@@ -14,6 +14,17 @@ services:
       - microservices-net
     restart: unless-stopped
 
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INIT_DB_ROOT_USERNAME: root
+      MONGO_INIT_DB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: ride-db
+    volumes:
+      - ./data:/data/db
 networks:
   microservices-net:
     driver: bridge
