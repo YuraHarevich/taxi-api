@@ -16,7 +16,7 @@ public class PassengerService {
 
     public Passenger registrate(PassengerRequest request) {
         var passenger = PassengerMapper.toPassenger(request);
-        passenger.setRate(5.0);
+        passenger.setRate(5.0f);
         passengerRepository.saveAndFlush(passenger);
         return passenger;
     }
@@ -46,5 +46,8 @@ public class PassengerService {
         else
             throw new EntityNotFoundException("Passenger with such id not found");
 
+    }
+    public Long getMaxId(){
+        return passengerRepository.findTopByOrderByIdDesc().getId();
     }
 }

@@ -1,6 +1,7 @@
 package com.Harevich.passenger_service.mapper;
 
 import com.Harevich.passenger_service.dto.PassengerRequest;
+import com.Harevich.passenger_service.dto.PassengerResponse;
 import com.Harevich.passenger_service.model.Passenger;
 
 public class PassengerMapper {
@@ -11,4 +12,15 @@ public class PassengerMapper {
                 .email(request.email())
                 .build();
     }
+
+    public static PassengerResponse toResponse(Passenger passenger) {
+        return new PassengerResponse(
+                passenger.getId(),
+                passenger.getName(),
+                passenger.getSurname(),
+                passenger.getEmail(),
+                passenger.getRate()
+        );
+    }
 }
+

@@ -2,6 +2,7 @@ package com.Harevich.passenger_service.controller;
 
 import com.Harevich.passenger_service.dto.PassengerRequest;
 import com.Harevich.passenger_service.dto.PassengerResponse;
+import com.Harevich.passenger_service.mapper.PassengerMapper;
 import com.Harevich.passenger_service.model.Passenger;
 import com.Harevich.passenger_service.service.PassengerService;
 import jakarta.validation.Valid;
@@ -19,11 +20,13 @@ public class PassengerController {
     public void registration(@Valid @RequestBody PassengerRequest request){
         passengerService.registrate(request);
     }
+
     @PatchMapping("edit")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Passenger edit(@RequestParam("id") Long id,@Valid @RequestBody PassengerRequest request){
-        return passengerService.edit(request,id);
+    public PassengerResponse edit(@RequestParam("id") Long id,@Valid @RequestBody PassengerRequest request){
+        return PassengerMapper.toResponse(passengerService.edit(request,id));
     }
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public PassengerResponse getPassengerById(@RequestParam("id") Long id){
