@@ -40,7 +40,6 @@ services:
       MONGO_INITDB_DATABASE: ride-db
     volumes:
       - mongo_data:/data/db
-
   pgadmin:
     container_name: ms_pgadmin
     image: dpage/pgadmin4
@@ -55,7 +54,6 @@ services:
     networks:
       - microservices-net
     restart: unless-stopped
-
 networks:
   microservices-net:
     driver: bridge
@@ -64,5 +62,3 @@ volumes:
   passengers_psql:
   mongo_data:
   pgadmin:
-
-
