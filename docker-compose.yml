@@ -39,13 +39,13 @@ services:
       MONGO_INIT_DB_ROOT_PASSWORD: password
       MONGO_INITDB_DATABASE: ride-db
     volumes:
-      - ride_mdb:/data/mongo
+      - mongo_data:/data/db
 networks:
   microservices-net:
     driver: bridge
 volumes:
   drivers_psql:
   passengers_psql:
-  ride_mdb:
+  mongo_data:
 
 
